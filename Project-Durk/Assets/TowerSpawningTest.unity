@@ -5295,6 +5295,7 @@ GameObject:
   - component: {fileID: 712835814}
   - component: {fileID: 712835813}
   - component: {fileID: 712835815}
+  - component: {fileID: 712835816}
   m_Layer: 0
   m_Name: Junction
   m_TagString: Untagged
@@ -5316,6 +5317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIMsgReciever: {fileID: 1182284036}
   TSHMReciever: {fileID: 712835815}
+  TDMReciever: {fileID: 712835816}
 --- !u!4 &712835814
 Transform:
   m_ObjectHideFlags: 0
@@ -5342,6 +5344,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc63c9d5569f1d499a22a0ab0811b88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &712835816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712835812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4325d3b5c95fa93428f6dbbf9601595f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Entries:
+  - ID: 1
+    Tower: {fileID: 2986277315308620728, guid: 0e4d4199bf1a91d47a60ac0efcc0e264, type: 3}
+  Ready: 0
 --- !u!4 &713139085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9144129966479170901, guid: c9fa6b3df398f3142b395ae520073b4c,
