@@ -18,7 +18,7 @@ public class EnemyBase : Attackable
     {
         base.Awake();
         if (StartDestination != null) m_navMeshAgent = Agent;
-        else Debug.LogError("EnemyBase " + m_name + ": NavMeshAgent was not set on this object!");
+        else IDebug.LogError("EnemyBase " + m_name + ": NavMeshAgent was not set on this object!");
         if (StartDestination != null) m_destination = StartDestination;
     }
 

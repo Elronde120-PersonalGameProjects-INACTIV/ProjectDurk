@@ -23,7 +23,7 @@ public class Attackable : Interactable
         m_health = StartHealth;
         if(m_health <= 0)
         {
-            Debug.LogWarning("Attackable " + m_name + ": m_health is <= 0. Was this on purpose?");
+            IDebug.LogWarning("Attackable " + m_name + ": m_health is <= 0. Was this on purpose?");
             m_isDead = true;
         }
         m_isDead = StartDead;

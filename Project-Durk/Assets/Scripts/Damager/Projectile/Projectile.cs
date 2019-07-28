@@ -15,7 +15,7 @@ public class Projectile : MonoBehaviour
     private float AreaOfEffect = 0f;
     [SerializeField]
     private float InitialSpeed = 0f;
-    
+
     public virtual void Awake()
     {
         if (StartMoveDir != Vector3.zero) m_movementDirection = StartMoveDir;
