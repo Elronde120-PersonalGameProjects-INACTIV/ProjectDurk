@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class TowerSpawnPoint : MonoBehaviour
@@ -20,6 +21,8 @@ public class TowerSpawnPoint : MonoBehaviour
     [SerializeField]
     private Transform TowerInstantiationPoint;
     [SerializeField]
+    private Transform UIMovePos;
+    [SerializeField]
     private Color hoverColor;
     [SerializeField]
     private Color highlightColor;
@@ -38,12 +41,11 @@ public class TowerSpawnPoint : MonoBehaviour
         startColor = rend.material.color;
     }
 
-    private void OnMouseEnter()
+    private void OnMouseOver()
     {
-        if (rend && m_highlighted == false)
+        if (rend && m_highlighted == false && EventSystem.current.IsPointerOverGameObject() == false)
             rend.material.color = hoverColor;
     }
-
     private void OnMouseExit()
     {
         if (rend && m_highlighted == false)
@@ -52,8 +54,11 @@ public class TowerSpawnPoint : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (m_highlighted == false)
+        if (m_highlighted == false && EventSystem.current.IsPointerOverGameObject() == false)
+        {
             MsgJunction.instance.SendHighlightManagerMsg("HIGHLIGHT", this.gameObject);
+            MsgJunction.instance.SendUIMsg("MOVE_TOWER_UI", UIMovePos.position, this);
+        }
     }
 
 

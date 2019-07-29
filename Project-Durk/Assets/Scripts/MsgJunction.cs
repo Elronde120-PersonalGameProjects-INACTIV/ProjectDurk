@@ -4,7 +4,7 @@ public class MsgJunction : MonoBehaviour
 {
     public static MsgJunction instance;
     [Header("There should only be one of these per scene")]
-    public GameObject UIMsgReciever;
+    public UIManager UIMsgReciever;
     public TowerSpawnHighlightManager TSHMReciever;
     public TowerDatabaseManager TDMReciever;
 
@@ -24,13 +24,13 @@ public class MsgJunction : MonoBehaviour
     }
 
     /// <summary>
-    /// Handles messages to the UI message reciever. Currently does nothing...
+    /// Handles messages to the UI message reciever with a position and TowerSpawnPoint in the message
     /// </summary>
     /// <param name="MSG">The message to send</param>
     /// <param name="POS">A vector to give the reciever</param>
-    public void SendUIMsg(string MSG, Vector3 POS)
+    public void SendUIMsg(string MSG, Vector3 POS, TowerSpawnPoint TSP)
     {
-        //do nothing for now...
+        UIMsgReciever.OnRecieveMessage(MSG, POS, TSP);
     }
 
     /// <summary>
